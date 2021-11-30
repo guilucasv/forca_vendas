@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>Força de Vendas</title>
+</head>
+<body>
+    <!-- Menu SideBar -->
+    <div class="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                <i class='bx bxs-store-alt'></i>
+                <div class="logo_name">Vendas Geolab</div>
+            </div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav_list">
+                <!-- Dashboard -->
+            <li>
+                <a href="#">
+                    <i class='bx bx-grid-alt' ></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+
+                <!-- User -->
+            <li>
+                <a href="#">
+                    <i class='bx bx-user' ></i>
+                    <span class="links_name">User</span>
+                </a>
+                <span class="tooltip">User</span>
+            </li>
+
+            <!-- Notificações -->
+            <li>
+                <a href="#">
+                    <i class='bx bx-chat' ></i>
+                    <span class="links_name">Notificações</span>
+                </a>
+                <span class="tooltip">Notificações</span>
+            </li>
+
+            <!-- Analítico -->
+            <li>
+                <a href="#">
+                    <i class='bx bx-pie-chart-alt-2' ></i>
+                    <span class="links_name">Analytics</span>
+                </a>
+                <span class="tooltip">Analytics</span>
+            </li>
+
+            <!-- File Manager -->
+            <li>
+                <a href="#">
+                    <i class='bx bx-folder' ></i>
+                    <span class="links_name">File Manager</span>
+                </a>
+                <span class="tooltip">File Manager</span>
+            </li>
+            
+            <!-- Pedidos -->
+            <li>
+                <a href="#">
+                    <i class='bx bx-cart-alt' ></i>
+                    <span class="links_name">Pedidos</span>
+                </a>
+                <span class="tooltip">Pedidos</span>
+            </li>
+
+            <!-- Favoritos -->
+            <li>
+                <a href="#">
+                    <i class='bx bx-heart' ></i>
+                    <span class="links_name">Favoritos</span>
+                </a>
+                <span class="tooltip">Favoritos</span>
+            </li>
+
+            <!-- Definições -->
+            <li>
+                <a href="#">
+                    <i class='bx bx-cog' ></i>
+                    <span class="links_name">Definições</span>
+                </a>
+                <span class="tooltip">Definições</span>
+            </li>
+        </ul>
+        <div class="profile_content">
+            <div class="profile">
+                <div class="profile_details">
+                    <img src='img/profile.PNG' alt="">
+                    <div class="name_job">
+                        <div class="name">Lucas Silva</div>
+                        <div class="job">Web Designer</div>
+                    </div>
+                </div>
+                <i class='bx bx-log-out' id="log_out"></i>
+            </div>
+        </div>
+    </div>
+    <div class="home_content">
+        <div class="text">Início</div>
+    </div>
+
+    <script>
+        let btn = document.querySelector("#btn");
+        let sidebar = document.querySelector(".sidebar");
+        let searchBtn = document.querySelector("bx-search");
+
+        btn.onclick = function() {
+            sidebar.classList.toggle("active");
+        }
+
+        searchBtn.onclick = function() {
+            sidebar.classList.toggle("active");
+        }
+                
+    </script>
+
+
+    <div id="form">
+        <form action="">
+            <div class="logo">
+            </div>
+            <h2 class="title">Cadastro de Pedidos - Geolab
+            </h2>
+
+
+            <div class="new-item">
+                <button class="btn-new" id="btn-new"><ion-icon name="newspaper-outline"></ion-icon>Novo Pedido</button>
+            </div>
+
+            <!-- Botão Editar Pedido -->
+            <div class="edit-item">
+                <button class="btn-edit" id="btn-edit"><ion-icon name="pencil-outline"></ion-icon>Editar Pedido</button>
+            </div>
+
+            <!-- Botão Salvar Pedido -->
+            <div class="save-item">
+                <button class="btn-save" id="btn-save"><ion-icon name="save-outline"></ion-icon>Salvar</button>
+            </div>
+
+            <!-- Botão Deletar Pedido -->
+            <div class="del-item">
+                <button class="btn-del" id="btn-del"><ion-icon name="trash-outline"></ion-icon>Excluir</button>
+            </div>
+
+            <!-- Botão Cancelar Criação do Pedido -->
+            <div class="save-close">
+                <button class="btn-close" id="btn-close"><ion-icon name="close-circle-outline"></ion-icon></ion-icon>Cancelar</button>
+            </div>
+
+            <!-- Botão Enviar Pedido -->
+            <div class="btn">
+            <button class="btn-send" id="btn-send"><ion-icon name="checkmark-done-outline"></ion-icon>Enviar Pedido</button>
+            </div>
+
+            <!-- Botão Imprimir Pedido -->
+            <div class="print">
+            <button class="btn-print" id="btn-print"><ion-icon name="print-outline"></ion-icon>Imprimir Pedido</button>
+            </div>
+
+
+
+
+
+
+
+        </form>
+    </div>
+    <div id="info">
+        <form action="">
+
+            <!-- Campos de Preenchimento do Pedido -->
+            <label class="pedido" for="text">Nº Pedido:</label>
+            <div class="input">
+                <input id="box-pedido" name="pedido" placeholder="Nº do Pedido (Automático)" type="text" readonly>
+            </div>
+
+            <!-- Campos de Informações da Empresa  -->
+            <label class="text-enterprise" for="text">Nome da Empresa:</label>
+            <div class="enterprise">
+                <input id="box-enterprise" name="enterprise" placeholder="Nome da Empresa" type="text">
+            </div>
+            
+            <!-- Campo Data  -->
+            <label class="data" for="text">Data de Criação:</label>
+            <div class="date">
+                <input id="box-data" name="date" placeholder="Data de Criação" type="date">
+            </div>
+
+            <!-- Campo Data Entrega  -->
+            <label class="data-entrega" for="text">Data de Entrega:</label>
+            <div class="date-delivery">
+                <input id="box-data-delivery" name="date-delivery" placeholder="Data de Criação" type="date">
+            </div>
+
+            <!-- Campo Carga  -->
+            <label class="cnpj" for="text">CNPJ/Cód:</label>
+            <div class="cnpj-cod">
+                <input id="box-cnpj" name="cnpj-cod" placeholder="Insira o CNPJ" type="number">
+            </div>
+
+
+
+            <!-- Campo Data Entrega  -->
+            <label class="delivery" for="text">Tipo de Frete:</label>
+            <div class="tipo-delivery">
+                <select id="box-tipo-delivery" name="date-delivery-box">
+                    <option>Tipo de Frete</option>
+                    <option>CIF</option>
+                    <option>VAZIO</option>
+                </select>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
